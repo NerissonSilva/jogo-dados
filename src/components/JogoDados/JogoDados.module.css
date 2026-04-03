@@ -1,0 +1,223 @@
+.boardContainer {
+  background: rgba(20, 20, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.placarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.placarItem span {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #a1a1aa;
+  font-weight: 600;
+}
+
+.pontos {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statusCentral {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tituloRodada {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.tituloFinal {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fca5a5;
+  margin: 0;
+}
+
+.resultadoTurno {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.mensagemFinal {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Players Area */
+.playersArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.playerCard {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid transparent;
+  padding: 30px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.3s ease;
+}
+
+.activeTurn {
+  background: rgba(99, 102, 241, 0.05);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+  transform: translateY(-5px);
+}
+
+.playerName {
+  font-size: 1.4rem;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.diceWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.vsInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vsText {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #475569;
+  font-style: italic;
+}
+
+/* Buttons */
+.playBtn, .nextBtn, .restartBtn {
+  outline: none;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.playBtn {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  width: 100%;
+}
+
+.playBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(99, 102, 241, 0.5);
+}
+
+.playBtn:disabled {
+  background: #334155;
+  color: #64748b;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.actionFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
+
+.nextBtn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  animation: pulse 2s infinite;
+}
+
+.nextBtn:hover {
+  transform: scale(1.05);
+}
+
+.restartBtn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  font-size: 1.2rem;
+  padding: 18px 40px;
+}
+
+.restartBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+@media (max-width: 768px) {
+  .playersArea {
+    flex-direction: column;
+  }
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .placarItem {
+    flex-direction: row;
+    gap: 15px;
+  }
+  .vsInfo {
+    padding: 15px 0;
+  }
+}
